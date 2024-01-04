@@ -1,4 +1,3 @@
-'use client'
 import * as React from 'react';
 import { styled, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -17,6 +16,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { MainListItems, SecondaryListItems } from './listItems';
+
 
 import theme from './theme';
 import Footer from './Footer'
