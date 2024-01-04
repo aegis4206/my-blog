@@ -1,27 +1,80 @@
-@tailwind base;
-@tailwind components;
+/* @tailwind base; */
+/* @tailwind components; */
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
+  /* --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255; */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
+    /* --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0; */
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  /* color: rgb(var(--foreground-rgb)); */
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
+}
+
+
+.timeline {
+  position: relative;
+  margin: 50px 0 0 0;
+}
+
+.timeline:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 47px;
+  width: 2px;
+  background-color: #ccc;
+  transform: translateX(-50%);
+}
+
+.event {
+  position: relative;
+  margin-bottom: 50px;
+
+}
+
+.event .date {
+  position: absolute;
+  top: -45px;
+  left: 47px;
+  transform: translateX(-50%);
+  background-color: #fff;
+  padding: 0 10px;
+  font-weight: bold;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  line-height: 40px;
+  /* min-width: 100px; */
+  text-align: center;
+  width: 120px;
+}
+
+.event .description {
+  margin-left: 70px;
+}
+
+.event h3 {
+  margin-top: 0;
+  font-weight: bold;
+}
+
+.event p {
+  margin: 0;
+  line-height: 1.5;
 }
