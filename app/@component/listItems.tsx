@@ -19,11 +19,13 @@ import storybook from '@/app/@img/storybook.png'
 import typescript from '@/app/@img/typescript.png'
 import rxjs from '@/app/@img/rxjs.png'
 import zustand from '@/app/@img/zustand.png'
+import { Node } from 'postcss';
 
 
 interface ListObj {
   title: string,
-  path: string
+  path: string,
+  icon: React.ReactNode
 }
 
 const List = ({ listArr }: any) => {

@@ -10,10 +10,8 @@ import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -22,8 +20,6 @@ import { MainListItems, SecondaryListItems } from './listItems';
 
 import theme from './theme';
 import Footer from './Footer'
-
-
 
 
 const drawerWidth: number = 240;
@@ -76,14 +72,14 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
   );
 
-// TODO remove, this demo shouldn't need to reset the theme.
-// const defaultTheme = createTheme();
 
-export default function Dashboard({
-  content,
-}: {
-  content: React.ReactNode
-}) {
+export default function Dashboard(
+  {
+    children,
+  }: {
+    children: React.ReactNode
+  }
+) {
 
   const [open, setOpen] = React.useState(true);
 
@@ -167,7 +163,7 @@ export default function Dashboard({
           <Toolbar />
           <Container maxWidth={false} sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
-              {content}
+              {children}
             </Grid>
             <Footer sx={{ pt: 4 }} />
           </Container>
