@@ -83,7 +83,25 @@ export default function Dashboard(
 ) {
 
   const [open, setOpen] = React.useState(true);
+  const [windowWidth, setWindowWidth] = React.useState(0);
 
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  React.useEffect(() => {
+    setWindowWidth(window.innerWidth);
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  React.useEffect(() => {
+    windowWidth < 768 ? setOpen(false) : setOpen(true)
+  }, [windowWidth]);
 
   const toggleDrawer = () => {
     setOpen(!open);
