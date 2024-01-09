@@ -62,6 +62,16 @@ export const SecondaryListItems = () => {
 
   const list = [
     {
+      title: '其他套件',
+      path: '/Other',
+      icon: <EditNoteIcon></EditNoteIcon>
+    },
+    {
+      title: 'Jotai',
+      path: '/Jotai',
+      icon: iconsFormat(jotai)
+    },
+    {
       title: 'NextJS',
       path: '/NextJS',
       icon: iconsFormat(nextjs)
@@ -90,11 +100,6 @@ export const SecondaryListItems = () => {
       title: 'StoryBook',
       path: '/StoryBook',
       icon: iconsFormat(storybook)
-    },
-    {
-      title: 'Jotai',
-      path: '/Jotai',
-      icon: iconsFormat(jotai)
     },
     {
       title: 'PostgreSql',

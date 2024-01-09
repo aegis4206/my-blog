@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import React from 'react'
 import { Grid, Typography, Paper } from '@mui/material'
 export const metadata: Metadata = {
-    title: "learn daily note",
-    description: 'Next JS',
+    title: "learn daily note - Jotai",
+    description: 'Jotai',
 }
 import CodeHighlight from '@/app/@component/prism/CodeHighlight';
 

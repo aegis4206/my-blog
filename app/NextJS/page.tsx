@@ -3,7 +3,7 @@ import React from 'react'
 import { Grid, Typography, Paper } from '@mui/material'
 
 export const metadata: Metadata = {
-    title: "learn daily note",
+    title: "learn daily note - Next JS",
     description: 'Next JS',
   }
 
