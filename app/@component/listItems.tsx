@@ -67,11 +67,6 @@ export const SecondaryListItems = () => {
       icon: <EditNoteIcon></EditNoteIcon>
     },
     {
-      title: 'Jotai',
-      path: '/Jotai',
-      icon: iconsFormat(jotai)
-    },
-    {
       title: 'NextJS',
       path: '/NextJS',
       icon: iconsFormat(nextjs)
@@ -80,6 +75,11 @@ export const SecondaryListItems = () => {
       title: 'TypeScript',
       path: '/TypeScript',
       icon: iconsFormat(typescript)
+    },
+    {
+      title: 'Jotai',
+      path: '/Jotai',
+      icon: iconsFormat(jotai)
     },
     {
       title: 'ZuStand',

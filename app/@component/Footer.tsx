@@ -5,10 +5,11 @@ const Copyright = (props: any) => {
     return (
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
             {'Copyright © '}
+            {new Date().getFullYear()}
+            {' '}
             <Link color="inherit" href="#">
                 white
-            </Link>{' '}
-            {new Date().getFullYear()}
+            </Link>
             {'.'}
         </Typography>
     )
