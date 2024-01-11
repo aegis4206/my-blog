@@ -81,6 +81,9 @@ type AandNew = A & {
                     TypeScript
                 </Typography>
                 <Typography >
+                    為彌補弱型別的JS而生，基於JS的型別管理
+                </Typography>
+                <Typography >
                     環境安裝
                 </Typography>
                 <CodeHighlight language="bash" code={installCode} />

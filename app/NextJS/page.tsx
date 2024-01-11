@@ -84,6 +84,9 @@ images: {
                     NextJS
                 </Typography>
                 <Typography>
+                    為解決React SEO問題的框架
+                </Typography>
+                <Typography>
                     環境安裝
                 </Typography>
                 <CodeHighlight language="bash" code={installCode} />
@@ -109,11 +112,11 @@ images: {
                 </Typography>
                 <CodeHighlight title="next.config.js" code={imageCode} />
                 <Typography>
-                    Cache機制，若需要每次都重新fetch新資料，需在參數項設定no-store，或者可使用ISR next參數項
+                    Cache機制，若需要每次都重新fetch Data，需在參數項設定no-store，或者可使用ISR next參數項
                 </Typography>
                 <CodeHighlight code={fetchCode} />
                 <Typography>
-                    SSG應用，使用在資料不經常更動下，使用export function generateStaticParams
+                    SSG應用，使用在資料不經常更動下，使用export fuNenction generateStaticParams
                 </Typography>
                 <CodeHighlight code={ssgCode} />
 
