@@ -6,6 +6,11 @@ import ListItemText from '@mui/material/ListItemText';
 import ListSubheader from '@mui/material/ListSubheader';
 import HomeIcon from '@mui/icons-material/Home';
 import EditNoteIcon from '@mui/icons-material/EditNote';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
+import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
+import Collapse from '@mui/material/Collapse';
 import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -25,28 +30,74 @@ import { Node } from 'postcss';
 interface ListObj {
   title: string,
   path: string,
-  icon: React.ReactNode
+  icon?: React.ReactNode,
+  children?: ListObj[]
 }
 
-const List = ({ listArr }: any) => {
-  const router = useRouter();
+const List = ({ listArr, nested }: { listArr: ListObj[], nested?: boolean }) => {
   const pathname = usePathname();
 
-  return listArr.map((item: ListObj) => (<Link href={item.path} key={item.title} style={{ textDecorationLine: 'none', color: 'inherit' }}>
-    <ListItemButton selected={pathname == item.path}>
+  const [open, setOpen] = React.useState(true);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
+
+  return listArr.map((item) => {
+    const listItem = (<>
       <ListItemIcon>
-        {item.path === '/' ? <HomeIcon /> : item?.icon}
+        {item.icon}
       </ListItemIcon>
       <ListItemText primary={item.title} />
-    </ListItemButton>
-  </Link>))
+    </>
+    )
+    return item.children && item.children.length > 0 ?
+      (<>
+        <ListItemButton key={item.title} onClick={handleClick} selected={item.children.some(children => pathname == children.path)}>
+          {listItem}
+          {open ? <ExpandLess /> : <ExpandMore />}
+        </ListItemButton>
+        <Collapse in={open} timeout="auto" unmountOnExit>
+          <List listArr={item.children} nested />
+        </Collapse>
+      </>)
+      : (<Link href={item.path} key={item.title} style={{ textDecorationLine: 'none', color: 'inherit' }}>
+        <ListItemButton sx={{ pl: nested ? 4 : null }} selected={pathname == item.path}>
+          {listItem}
+        </ListItemButton>
+      </Link>)
+  }
+    // item.children ?
+    //   (<>
+    //     <ListItemButton key={item.title} onClick={handleClick} selected={item.children.some(children => pathname == children.path)}>
+    //       <ListItemIcon>
+    //         {item?.icon}
+    //       </ListItemIcon>
+    //       <ListItemText primary={item.title} />
+    //       {open ? <ExpandLess /> : <ExpandMore />}
+    //     </ListItemButton>
+    //     <Collapse in={open} timeout="auto" unmountOnExit>
+    //       <List listArr={item.children} nested />
+    //     </Collapse>
+    //   </>)
+    //   : (<Link href={item.path} key={item.title} style={{ textDecorationLine: 'none', color: 'inherit' }}>
+    //     <ListItemButton sx={{ pl: nested ? 4 : null }} selected={pathname == item.path}>
+    //       <ListItemIcon>
+    //         {item.path === '/' ? <HomeIcon /> : item?.icon}
+    //       </ListItemIcon>
+    //       <ListItemText primary={item.title} />
+    //     </ListItemButton>
+    //   </Link>)
+  )
+
 }
 
 export const MainListItems = () => {
   const list = [
     {
       title: 'About Me',
-      path: '/'
+      path: '/',
+      icon: <HomeIcon />
     }
   ]
   return (
@@ -64,7 +115,19 @@ export const SecondaryListItems = () => {
     {
       title: '其他套件',
       path: '/Other',
-      icon: <EditNoteIcon></EditNoteIcon>
+      icon: <EditNoteIcon></EditNoteIcon>,
+      children: [
+        {
+          title: 'react-checkbox-tree',
+          path: '/react-checkbox-tree',
+          icon: <CheckBoxOutlinedIcon></CheckBoxOutlinedIcon>,
+        },
+        {
+          title: 'react-query',
+          path: '/react-query',
+          icon: <QueryBuilderIcon></QueryBuilderIcon>,
+        }
+      ]
     },
     {
       title: 'NextJS',
@@ -112,6 +175,8 @@ export const SecondaryListItems = () => {
       icon: iconsFormat(vercel)
     },
   ]
+
+
   return (
     <React.Fragment>
       <ListSubheader component="div" inset>
