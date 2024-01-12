@@ -44,23 +44,23 @@ const List = ({ listArr, nested }: { listArr: ListObj[], nested?: boolean }) => 
   };
 
   return listArr.map((item) => {
-    const listItem = (<>
+    const listItem = (<React.Fragment key={item.title}>
       <ListItemIcon>
         {item.icon}
       </ListItemIcon>
       <ListItemText primary={item.title} />
-    </>
+    </React.Fragment>
     )
     return item.children && item.children.length > 0 ?
-      (<>
-        <ListItemButton key={item.title} onClick={handleClick} selected={item.children.some(children => pathname == children.path)}>
+      (<React.Fragment key={item.title}>
+        <ListItemButton onClick={handleClick} selected={item.children.some(children => pathname == children.path)}>
           {listItem}
           {open ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List listArr={item.children} nested />
         </Collapse>
-      </>)
+      </React.Fragment>)
       : (<Link href={item.path} key={item.title} style={{ textDecorationLine: 'none', color: 'inherit' }}>
         <ListItemButton sx={{ pl: nested ? 4 : null }} selected={pathname == item.path}>
           {listItem}
@@ -123,7 +123,7 @@ export const SecondaryListItems = () => {
           icon: <CheckBoxOutlinedIcon></CheckBoxOutlinedIcon>,
         },
         {
-          title: 'react-query',
+          title: 'tanstack/react-query',
           path: '/react-query',
           icon: <QueryBuilderIcon></QueryBuilderIcon>,
         }
