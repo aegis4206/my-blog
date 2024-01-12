@@ -19,7 +19,7 @@ export const isLoginAtom = atom(false);`
         {children}
     </Layout>
 </Provider>`
-const useCode = `import { isLoginAtom } from './@jotai/login';
+    const useCode = `import { isLoginAtom } from './@jotai/login';
 import { useAtom } from 'jotai';
 
 const [isLogin, setIsLogin] = useAtom(isLoginAtom); //是否已登入`

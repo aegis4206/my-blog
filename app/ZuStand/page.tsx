@@ -55,7 +55,7 @@ const { state, setState } = store();`
                 }}
             >
                 <Typography variant="h5" color="primary" gutterBottom>
-                    Jotai
+                    ZuStand
                 </Typography>
                 <Typography >
                     同為狀態管理工具
