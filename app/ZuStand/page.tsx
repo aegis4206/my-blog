@@ -61,7 +61,7 @@ const { state, setState } = store();`
                     同為狀態管理工具
                 </Typography>
                 <Typography >
-                    環境安裝
+                    套件安裝
                 </Typography>
                 <CodeHighlight language="bash" code={installCode} />
                 <Typography >

@@ -42,7 +42,7 @@ const [isLogin, setIsLogin] = useAtom(isLoginAtom); //是否已登入`
                     狀態管理工具，與Redex、ZuStand雷同，使用方式較接近原生React Hook的操作方式。
                 </Typography>
                 <Typography >
-                    環境安裝
+                    套件安裝
                 </Typography>
                 <CodeHighlight language="bash" code={installCode} />
                 <Typography >

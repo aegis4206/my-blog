@@ -150,11 +150,6 @@ export const SecondaryListItems = () => {
       icon: iconsFormat(zustand)
     },
     {
-      title: 'RxJS',
-      path: '/RxJS',
-      icon: iconsFormat(rxjs)
-    },
-    {
       title: 'Redux',
       path: '/Redux',
       icon: iconsFormat(redux)
@@ -163,6 +158,11 @@ export const SecondaryListItems = () => {
       title: 'StoryBook',
       path: '/StoryBook',
       icon: iconsFormat(storybook)
+    },
+    {
+      title: 'RxJS',
+      path: '/RxJS',
+      icon: iconsFormat(rxjs)
     },
     {
       title: 'PostgreSql',

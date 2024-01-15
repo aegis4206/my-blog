@@ -122,7 +122,7 @@ mutate(variables, {
                     非同步fetch data工具
                 </Typography>
                 <Typography >
-                    環境安裝
+                    套件安裝
                 </Typography>
                 <CodeHighlight language="bash" code={installCode} />
                 <Typography >

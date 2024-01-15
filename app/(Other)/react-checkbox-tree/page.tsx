@@ -63,7 +63,7 @@ const [expanded, setExpanded] = useState<string[]>([])
                     樹狀checkbox生成工具，可客製化參數較多。
                 </Typography>
                 <Typography >
-                    環境安裝
+                    套件安裝
                 </Typography>
                 <CodeHighlight language="bash" code={installCode} />
                 <Typography >
