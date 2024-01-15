@@ -35,7 +35,7 @@ const CodeHighlight = ({ code, language = "jsx", title }: PropsType) => {
                     {code}
                 </code>
             </pre>
-        </div >
+        </div>
     );
 };
 

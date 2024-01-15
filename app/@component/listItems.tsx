@@ -150,7 +150,7 @@ export const SecondaryListItems = () => {
       icon: iconsFormat(zustand)
     },
     {
-      title: 'Redux',
+      title: 'Redux toolkit',
       path: '/Redux',
       icon: iconsFormat(redux)
     },
@@ -183,6 +183,6 @@ export const SecondaryListItems = () => {
         Learn Note
       </ListSubheader>
       <List listArr={list} />
-    </React.Fragment >
+    </React.Fragment>
   )
 };

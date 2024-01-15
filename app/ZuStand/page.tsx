@@ -57,26 +57,26 @@ const { state, setState } = store();`
                 <Typography variant="h5" color="primary" gutterBottom>
                     ZuStand
                 </Typography>
-                <Typography >
+                <Typography>
                     同為狀態管理工具
                 </Typography>
-                <Typography >
+                <Typography>
                     套件安裝
                 </Typography>
                 <CodeHighlight language="bash" code={installCode} />
-                <Typography >
+                <Typography>
                     引入create創建Store
                 </Typography>
                 <CodeHighlight title="store.tsx" code={storeCode} />
-                <Typography >
+                <Typography>
                     ZuStand不需要額外使用Provider去包，可直接引入解構使用
                 </Typography>
                 <CodeHighlight title="component.tsx" code={useCode} />
-                <Typography >
+                <Typography>
                     另外若想使用Redux Devtools只需要在Store的set前多包一層devtools
                 </Typography>
                 <CodeHighlight title="store.tsx" code={devToolsCode} />
-                <Typography >
+                <Typography>
                     非同步可直接async，不像Redux需額外透過thunk
                 </Typography>
 

@@ -59,14 +59,14 @@ const [expanded, setExpanded] = useState<string[]>([])
                 <Typography variant="h5" color="primary" gutterBottom>
                     react-checkbox-tree
                 </Typography>
-                <Typography >
+                <Typography>
                     樹狀checkbox生成工具，可客製化參數較多。
                 </Typography>
-                <Typography >
+                <Typography>
                     套件安裝
                 </Typography>
                 <CodeHighlight language="bash" code={installCode} />
-                <Typography >
+                <Typography>
                     與其他UI庫內的Tree差不多，一樣為value、label、children
                 </Typography>
                 <CodeHighlight code={code} />

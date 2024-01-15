@@ -118,28 +118,28 @@ mutate(variables, {
                 <Typography variant="h5" color="primary" gutterBottom>
                     <a href="https://tanstack.com/query/latest/docs/react/overview" target="_blank" rel="noopener noreferrer">tanstack/react-query V5</a>
                 </Typography>
-                <Typography >
+                <Typography>
                     非同步fetch data工具
                 </Typography>
-                <Typography >
+                <Typography>
                     套件安裝
                 </Typography>
                 <CodeHighlight language="bash" code={installCode} />
-                <Typography >
+                <Typography>
                     需要使用Provider來包，才能在組件中使用該功能
                 </Typography>
                 <CodeHighlight title="layout.tsx" code={providerCode} />
-                <Typography >
+                <Typography>
                     fetch Data，若失敗不會重新fetch，需設置retry
                     <br></br>
                     chace機制預設保留五分鐘
                 </Typography>
                 <CodeHighlight code={fetchDataCode} />
-                <Typography >
+                <Typography>
                     useQueries (Parallel Queries)
                 </Typography>
                 <CodeHighlight code={useQueriesCode} />
-                <Typography >
+                <Typography>
                     useMutation & invalidateQueries
                 </Typography>
                 <CodeHighlight code={useMutationCode} />

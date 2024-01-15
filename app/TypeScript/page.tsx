@@ -80,10 +80,10 @@ type AandNew = A & {
                 <Typography variant="h5" color="primary" gutterBottom>
                     TypeScript
                 </Typography>
-                <Typography >
+                <Typography>
                     為彌補弱型別的JS而生，基於JS的型別管理
                 </Typography>
-                <Typography >
+                <Typography>
                     環境安裝
                 </Typography>
                 <CodeHighlight language="bash" code={installCode} />
@@ -91,11 +91,11 @@ type AandNew = A & {
                     資料型別(若無設定型別，TS會根據初始值推論該變數型別)
                 </Typography>
                 <CodeHighlight code={typeCode} />
-                <Typography >
+                <Typography>
                     泛型，宣告類型以{"<型別>"}代入型別參數
                 </Typography>
                 <CodeHighlight code={genericsCode} />
-                <Typography >
+                <Typography>
                     interface與type差別
                 </Typography>
                 <CodeHighlight title="interface" code={interfaceCode} />
