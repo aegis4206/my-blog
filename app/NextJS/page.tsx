@@ -69,6 +69,60 @@ images: {
     )
 }
 `
+const configCode = `/** @type {import('next').NextConfig} */
+const nextConfig = {
+    // 增加compiler
+    compiler: {
+        styledComponents: true,
+    },
+}
+
+module.exports = nextConfig`
+
+const registryCode = `'use client'
+ 
+import React, { useState } from 'react'
+import { useServerInsertedHTML } from 'next/navigation'
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
+ 
+export default function StyledComponentsRegistry({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  // Only create stylesheet once with lazy initial state
+  // x-ref: https://reactjs.org/docs/hooks-reference.html#lazy-initial-state
+  const [styledComponentsStyleSheet] = useState(() => new ServerStyleSheet())
+ 
+  useServerInsertedHTML(() => {
+    const styles = styledComponentsStyleSheet.getStyleElement()
+    styledComponentsStyleSheet.instance.clearTag()
+    return <>{styles}</>
+  })
+ 
+  if (typeof window !== 'undefined') return <>{children}</>
+ 
+  return (
+    <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
+      {children}
+    </StyleSheetManager>
+  )
+}`
+const layoutCode = `import StyledComponentsRegistry from './lib/registry'
+ 
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html>
+      <body>
+        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+      </body>
+    </html>
+  )
+}`
 
     return (
         <Grid item xs={12} md={12}>
@@ -119,7 +173,18 @@ images: {
                     SSG應用，使用在資料不經常更動下，使用export fuNenction generateStaticParams
                 </Typography>
                 <CodeHighlight code={ssgCode} />
-
+                <Typography variant="h6">
+                    Styled Components
+                </Typography>
+                <Typography>
+                    在CSR下使用可能造成CSS異步渲染的情況，可使用官方的解決方法，其做法為將全部CSS style rules先收集塞到Head裡面
+                </Typography>
+                <CodeHighlight title="next.config.js" code={configCode} />
+                <CodeHighlight title="lib/registry.tsx" code={registryCode} />
+                <Typography>
+                    使用方式類似狀態管理工具，需在外層在包覆一層
+                </Typography>
+                <CodeHighlight title="app/layout.tsx" code={layoutCode} />
             </Paper>
         </Grid>
 
