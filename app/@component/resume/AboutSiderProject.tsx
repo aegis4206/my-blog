@@ -18,7 +18,7 @@ const AboutSiderProject = () => {
                     }}
                 >
                     <Typography component="h2" variant="h5" color="primary" gutterBottom>
-                        <Link sx={{ textDecorationLine: 'none' }} color="primary" href="#" target="_blank">
+                        <Link sx={{ textDecorationLine: 'none' }} color="primary" href="https://order-puce.vercel.app/" target="_blank">
                             Order System
                         </Link>
                     </Typography>
@@ -28,14 +28,14 @@ const AboutSiderProject = () => {
                     <Typography component="p">
                         Node.JS後端API串接PostgreSQL，WebSocket監聽PostgreSQL trigger即時更新訂單，外觀Ant Design Pro UI，Echarts營業額折線圖，EasyModel狀態管理，詳細請點標題或下方連結~
                     </Typography>
-                    <Typography color="text.secondary" sx={{ flex: 1, fontSize: '0.9rem' }}>
+                    {/* <Typography color="text.secondary" sx={{ flex: 1, fontSize: '0.9rem' }}>
                         登入帳號與密碼(已鍵入初始值僅需按登入即可)
                         <br></br>
                         帳號 : admin
                         密碼 : admin
-                    </Typography>
+                    </Typography> */}
                     <div>
-                        <Link color="primary" href="#" target="_blank">
+                        <Link color="primary" href="https://order-puce.vercel.app/" target="_blank">
                             Link To
                         </Link>
                     </div>

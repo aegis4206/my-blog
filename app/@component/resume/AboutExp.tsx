@@ -9,6 +9,7 @@ import firebase from '@/app/@img/firebase.png'
 import vercel from '@/app/@img/vercel.png'
 import nextjs from '@/app/@img/nextjs.svg'
 import zustand from '@/app/@img/zustand.png'
+import jotai from '@/app/@img/jotai.png'
 
 interface svgObject {
   src: string,
@@ -41,6 +42,10 @@ const svgLists: svgObject[] = [
   {
     src: zustand,
     alt: 'zustand'
+  },
+  {
+    src: jotai,
+    alt: 'jotai'
   },
 ]
 
