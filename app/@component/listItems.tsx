@@ -24,6 +24,7 @@ import storybook from '@/app/@img/storybook.png'
 import typescript from '@/app/@img/typescript.png'
 import rxjs from '@/app/@img/rxjs.png'
 import zustand from '@/app/@img/zustand.png'
+import playwright from '@/app/@img/playwright.svg';
 import { Node } from 'postcss';
 
 
@@ -155,6 +156,11 @@ export const SecondaryListItems = () => {
       icon: iconsFormat(redux)
     },
     {
+      title: 'Playwright',
+      path: '/Playwright',
+      icon: iconsFormat(playwright)
+    },
+    {
       title: 'StoryBook',
       path: '/StoryBook',
       icon: iconsFormat(storybook)
@@ -169,11 +175,11 @@ export const SecondaryListItems = () => {
       path: '/PostgreSql',
       icon: iconsFormat(postgresql)
     },
-    {
-      title: 'Vercel',
-      path: '/Vercel',
-      icon: iconsFormat(vercel)
-    },
+    // {
+    //   title: 'Vercel',
+    //   path: '/Vercel',
+    //   icon: iconsFormat(vercel)
+    // },
   ]
 
 
