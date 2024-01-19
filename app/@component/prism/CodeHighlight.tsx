@@ -6,6 +6,7 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers';
 import 'prismjs/components/prism-jsx';
 import 'prismjs/components/prism-bash';
+import 'prismjs/components/prism-sql';
 
 interface PropsType {
     code: String,

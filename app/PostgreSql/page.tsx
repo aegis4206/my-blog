@@ -9,7 +9,17 @@ import CodeHighlight from '@/app/@component/prism/CodeHighlight';
 
 
 const PostgreSql = async () => {
-    const installCode = `建置中...`
+    const memoCode = `// DISTINCT過濾掉重複欄位的值
+SELECT DISTINCT 欄位名 FROM 表;
+
+// LEFT JOIN 與 RIGHT JOIN 返回左或右表所有資料
+// FULL JOIN返回左右表所有資料
+// 多表時可使用簡寫在表後方
+SELECT 簡寫.欄位, 簡寫.欄位...
+FROM 表 簡寫
+FULL JOIN 表 簡寫
+ON 條件;
+`
 
     return (
         <Grid item xs={12} md={12}>
@@ -22,15 +32,12 @@ const PostgreSql = async () => {
                 }}
             >
                 <Typography variant="h5" color="primary" gutterBottom>
-                    PostgreSql
+                    SQL
                 </Typography>
                 <Typography>
-                    XX工具
+                    常用筆記
                 </Typography>
-                <Typography>
-                    套件安裝
-                </Typography>
-                <CodeHighlight language="bash" code={installCode} />
+                <CodeHighlight language="sql" code={memoCode} />
                 <Typography>
                     ...
                 </Typography>
