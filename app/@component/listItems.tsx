@@ -25,6 +25,8 @@ import typescript from '@/app/@img/typescript.png'
 import rxjs from '@/app/@img/rxjs.png'
 import zustand from '@/app/@img/zustand.png'
 import playwright from '@/app/@img/playwright.svg';
+import ramda from '@/app/@img/ramda.png'
+
 import { Node } from 'postcss';
 
 
@@ -127,6 +129,11 @@ export const SecondaryListItems = () => {
           title: 'tanstack/react-query',
           path: '/react-query',
           icon: <QueryBuilderIcon></QueryBuilderIcon>,
+        },
+        {
+          title: 'Lodash&Ramda',
+          path: '/lodash&ramda',
+          icon: iconsFormat(ramda),
         }
       ]
     },
