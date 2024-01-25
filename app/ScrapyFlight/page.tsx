@@ -11,6 +11,7 @@ import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 
 
+
 const ws = new WebSocket('ws://127.0.0.1:8000')
 
 const messageFormat = {
@@ -27,7 +28,7 @@ const ScrapyFlight = () => {
     const [webSocketState, setWebSocketState] = useState(false)
     const [message, setMessage] = useState('');
     const [detail, setDetail] = useState('');
-    const calendarRef = useRef(null);
+    const calendarRef = useRef<FullCalendar | null>(null);
     const [open, setOpen] = useState(false);
     const [onLoad, setOnLoad] = useState('開始爬取')
     const [searchOptions, setSearchOptions] = useState({
@@ -39,8 +40,8 @@ const ScrapyFlight = () => {
     const [events, setEvents] = useState<eventsType[]>([])
 
 
-    const dateFliterHandle = (goDateList: any, returnDateList: any) => {
-        const filterDate = (list: any, back?: any) => {
+    const dateFliterHandle = (goDateList: string[], returnDateList: string[]) => {
+        const filterDate = (list: string[], back?: boolean) => {
             const res = list.reduce((acc: any, cur: any, i: any) => {
                 if (i % 2 == 0) {
                     acc.push({
@@ -110,7 +111,7 @@ const ScrapyFlight = () => {
         }
         ws.send(JSON.stringify(searchOptions))
         setOnLoad('爬取中...')
-        calendarRef.current.getApi().gotoDate(goDate);
+        calendarRef.current!.getApi().gotoDate(goDate);
     }
 
     // snackbar
