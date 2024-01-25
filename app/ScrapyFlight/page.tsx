@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState, useRef } from 'react'
-import { Grid, Typography, Paper, Button, MenuItem, Select, Snackbar, Alert } from '@mui/material'
+import { Grid, Typography, Paper, Button, MenuItem, Select, Snackbar, Alert, Checkbox } from '@mui/material'
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import DisabledByDefaultIcon from '@mui/icons-material/DisabledByDefault';
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
@@ -12,7 +12,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 
 
 
-const ws = new WebSocket('ws://127.0.0.1:8000')
+const ws = new WebSocket('wss://backend-playwright.onrender.com')
 
 const messageFormat = {
     date: '日期區間錯誤或需要選擇同年份',
@@ -35,7 +35,9 @@ const ScrapyFlight = () => {
         forward: 'KHH',
         back: 'OKA',
         goDate: moment().add(3, 'M').format('yyyy-MM-DD'),
-        returnDate: moment().add(3, 'M').format('yyyy-MM-DD')
+        returnDate: moment().add(3, 'M').format('yyyy-MM-DD'),
+        choseBrowser: "firefox",
+        head: false
     })
     const [events, setEvents] = useState<eventsType[]>([])
 
@@ -145,9 +147,25 @@ const ScrapyFlight = () => {
                     虎航機票爬取
                 </Typography>
                 <Typography sx={{ display: 'flex' }} gutterBottom>
-                    後臺連線狀態{webSocketState ? <CheckBoxIcon color='primary' /> : <DisabledByDefaultIcon />}
+                    (有機率卡reCAPTCHA驗證)後臺連線狀態{webSocketState ? <CheckBoxIcon color='primary' /> : <DisabledByDefaultIcon />}
                 </Typography>
                 <div>
+                    <div style={{ marginBottom: "10px", display: "flex" }}>
+                        <label>若持續錯誤請更換瀏覽器核心試試</label>
+                        <Select sx={{ height: "30px", marginLeft: "10px", marginRight: "30px" }} value={searchOptions.choseBrowser}
+                            onChange={e => setSearchOptions(pre => ({ ...pre, choseBrowser: e.target.value }))}>
+                            <MenuItem value="chromium">chrome</MenuItem>
+                            <MenuItem value="firefox">firefox</MenuItem>
+                            <MenuItem value="webkit">webkit</MenuItem>
+                        </Select>
+                    </div>
+                    <div style={{ marginBottom: "10px", display: "flex", alignItems: 'center' }}>
+                        <label>Headless模式(開啟後速度快但高機率被鎖)</label>
+                        <Checkbox
+                            checked={searchOptions.head}
+                            onChange={e => setSearchOptions(pre => ({ ...pre, head: e.target.checked }))}
+                        />
+                    </div>
                     <div style={{ marginBottom: "30px", display: "flex" }}>
                         <label>出發</label>
                         <Select sx={{ height: "30px", marginLeft: "10px", marginRight: "30px" }} value={searchOptions.forward}

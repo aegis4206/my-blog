@@ -52,6 +52,36 @@ const AboutSiderProject = () => {
                     }}
                 >
                     <Typography component="h2" variant="h5" color="primary" gutterBottom>
+                        <Link sx={{ textDecorationLine: 'none' }} color="primary" href="/ScrapyFlight">
+                            Scrapy Flight
+                        </Link>
+                    </Typography>
+                    <Typography color="text.secondary">
+                        虎航機票爬取
+                    </Typography>
+                    <Typography component="p">
+                        後台NodeJS(express)，playwright爬取，WebSocket即時顯示結果，詳細請點標題或下方連結~
+                    </Typography>
+                    <Typography color="text.secondary" sx={{ flex: 1, fontSize: '0.9rem' }}>
+
+                    </Typography>
+                    <div>
+                        <Link color="primary" href="/ScrapyFlight">
+                            Link To
+                        </Link>
+                    </div>
+                </Paper>
+            </Grid>
+            <Grid item xs={12} md={4}>
+                <Paper
+                    sx={{
+                        p: 2,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        height: '100%',
+                    }}
+                >
+                    <Typography component="h2" variant="h5" color="primary" gutterBottom>
                         <Link sx={{ textDecorationLine: 'none' }} color="primary" href="https://find-note-aegis4206-whites-projects.vercel.app/posts" target="_blank">
                             FindNote
                         </Link>
@@ -70,33 +100,6 @@ const AboutSiderProject = () => {
                     </Typography>
                     <div>
                         <Link color="primary" href="https://find-note-aegis4206-whites-projects.vercel.app/posts" target="_blank">
-                            Link To
-                        </Link>
-                    </div>
-                </Paper>
-            </Grid>
-            <Grid item xs={12} md={4}>
-                <Paper
-                    sx={{
-                        p: 2,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        height: '100%',
-                    }}
-                >
-                    <Typography component="h2" variant="h5" color="primary" gutterBottom>
-                        <Link sx={{ textDecorationLine: 'none' }} color="primary" href="/ScrapyFlight">
-                            Scrapy Flight
-                        </Link>
-                    </Typography>
-                    <Typography color="text.secondary">
-                        虎航機票爬取
-                    </Typography>
-                    <Typography component="p">
-                        後台NodeJS(express)，playwright爬取，WebSocket即時顯示結果，詳細請點標題或下方連結~
-                    </Typography>
-                    <div>
-                        <Link color="primary" href="/ScrapyFlight">
                             Link To
                         </Link>
                     </div>
