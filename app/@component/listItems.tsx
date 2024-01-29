@@ -11,6 +11,7 @@ import ExpandMore from '@mui/icons-material/ExpandMore';
 import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
 import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 import Collapse from '@mui/material/Collapse';
+import CodeIcon from '@mui/icons-material/Code';
 import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -116,10 +117,15 @@ export const SecondaryListItems = () => {
 
   const list = [
     {
-      title: '其他套件',
+      title: '其他',
       path: '/Other',
       icon: <EditNoteIcon></EditNoteIcon>,
       children: [
+        {
+          title: 'FP筆記',
+          path: '/FP',
+          icon: <CodeIcon></CodeIcon>,
+        },
         {
           title: 'react-checkbox-tree',
           path: '/react-checkbox-tree',
