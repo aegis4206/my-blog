@@ -12,7 +12,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 
 
 
-const ws = new WebSocket('wss://backend-playwright.onrender.com')
+const ws = new WebSocket('ws://aegis4206.tplinkdns.com:8001/')
 
 const messageFormat = {
     date: '日期區間錯誤或需要選擇同年份',
