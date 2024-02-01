@@ -52,7 +52,7 @@ const AboutSiderProject = () => {
                     }}
                 >
                     <Typography component="h2" variant="h5" color="primary" gutterBottom>
-                        <Link sx={{ textDecorationLine: 'none' }} color="primary" href="/ScrapyFlight">
+                        <Link sx={{ textDecorationLine: 'none' }} color="primary" href="http://aegis4206.tplinkdns.com:8080/ScrapyFlight">
                             Scrapy Flight
                         </Link>
                     </Typography>
@@ -66,7 +66,7 @@ const AboutSiderProject = () => {
 
                     </Typography>
                     <div>
-                        <Link color="primary" href="/ScrapyFlight">
+                        <Link color="primary" href="http://aegis4206.tplinkdns.com:8080/ScrapyFlight">
                             Link To
                         </Link>
                     </div>
