@@ -82,7 +82,8 @@ const ScrapyFlight = () => {
         }
         return () => {
             ws.onclose = () => {
-                setWebSocketState(false)
+                setWebSocketState(false);
+                ws.close();
             };
         }
     }, [])
