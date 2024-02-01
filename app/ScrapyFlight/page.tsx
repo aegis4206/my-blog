@@ -12,12 +12,9 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 
 
 
-const ws = new WebSocket('ws://aegis4206.tplinkdns.com:8001/')
+const ws = new WebSocket('ws://127.0.0.1:8001/')
 
-const messageFormat = {
-    date: '日期區間錯誤或需要選擇同年份',
-    network: '伺服器無回應或選擇日期無航班'
-}
+
 interface eventsType {
     title: string,
     date: string,
@@ -73,7 +70,7 @@ const ScrapyFlight = () => {
             console.log(data)
             data.complete && setOnLoad('爬取完畢');
             if (data.message) {
-                setMessage(messageFormat.network)
+                setMessage(data.message)
                 setOpen(true);
                 setOnLoad('開始爬取');
             }
@@ -107,7 +104,7 @@ const ScrapyFlight = () => {
         // })
         const { returnDate, goDate } = searchOptions
         if ((moment(returnDate) < moment(goDate)) || (moment(returnDate).year() != moment(goDate).year())) {
-            setMessage(messageFormat.date)
+            setMessage('日期區間錯誤或需要選擇同年份')
             setOpen(true);
             return
         }
@@ -219,7 +216,7 @@ const ScrapyFlight = () => {
                 />
                 <Snackbar
                     open={open}
-                    autoHideDuration={3000}
+                    autoHideDuration={10000}
                     onClose={handleClose}
                     anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
                 >
