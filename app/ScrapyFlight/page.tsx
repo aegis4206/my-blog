@@ -12,7 +12,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 
 
 
-const ws = new WebSocket('ws://127.0.0.1:8001/')
+const ws = new WebSocket('ws://aegis4206.tplinkdns.com:8001/')
 
 
 interface eventsType {
@@ -34,7 +34,7 @@ const ScrapyFlight = () => {
         goDate: moment().add(3, 'M').format('yyyy-MM-DD'),
         returnDate: moment().add(3, 'M').format('yyyy-MM-DD'),
         choseBrowser: "firefox",
-        head: false
+        head: true
     })
     const [events, setEvents] = useState<eventsType[]>([])
 
@@ -160,6 +160,7 @@ const ScrapyFlight = () => {
                     <div style={{ marginBottom: "10px", display: "flex", alignItems: 'center' }}>
                         <label>Headless模式(開啟後速度快但高機率被鎖)</label>
                         <Checkbox
+                            disabled={true}
                             checked={searchOptions.head}
                             onChange={e => setSearchOptions(pre => ({ ...pre, head: e.target.checked }))}
                         />
