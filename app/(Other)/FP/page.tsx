@@ -56,7 +56,19 @@ await fetchAPI.post(body: any);
 await fetchAPI.delete(id: string | number);
 await fetchAPI.put(id: string | number, body: any);
 await fetchAPI.patch(id: string | number, body: any);`
-
+    const functorCode = `const initFn = () =>{
+    console.log('init');
+    return 0;
+}
+const Box = f => ({
+    FN: nextF => Box(() => nextF(f())),
+    runFN: () => f()
+})
+const initBox = Box(initFn); // 初始傳入值
+const addNumber = initBox.FN(n => n + 1);
+const doubleNumber = addNumber.FN(n => n * 2); // 可重複帶入FN函式
+// 結果 init return 0 => 0+2 return 2 => 2*2 return 4
+`
 
 
     return (
@@ -76,7 +88,10 @@ await fetchAPI.patch(id: string | number, body: any);`
                     練習fetchAPI
                 </Typography>
                 <CodeHighlight code={fetchCode} />
-
+                <Typography>
+                    functor
+                </Typography>
+                <CodeHighlight code={functorCode} />
 
             </Paper>
         </Grid>
