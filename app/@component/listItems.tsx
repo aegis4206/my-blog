@@ -17,7 +17,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import redux from '@/app/@img/redux.svg'
-import postgresql from '@/app/@img/postgresql.png'
+import sql from '@/app/@img/sql.png'
 import vercel from '@/app/@img/vercel.png'
 import nextjs from '@/app/@img/nextjs.svg'
 import jotai from '@/app/@img/jotai.png'
@@ -184,9 +184,9 @@ export const SecondaryListItems = () => {
       icon: iconsFormat(rxjs)
     },
     {
-      title: 'PostgreSql',
-      path: '/PostgreSql',
-      icon: iconsFormat(postgresql)
+      title: 'SQL',
+      path: '/SQL',
+      icon: iconsFormat(sql)
     },
     // {
     //   title: 'Vercel',
